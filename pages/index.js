@@ -41,8 +41,8 @@ function BasicSelect({ duration, onChange }) {
 }
 
 function Timer({ duration, onFinish }) {
-  const [time, setTime] = React.useState(duration * 60 + 3);
-
+  // const [time, setTime] = React.useState(duration * 60 + 3);
+  const [time, setTime] = React.useState(Number(duration) + 3);
   const transformTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60 > 9 ? time % 60 : `0${time % 60}`;
@@ -99,15 +99,13 @@ export default function Home() {
   // 开始
   const onStartClick = () => {
     setStart(true);
-  const audio = new Audio("/media/audio/yq.m4a");
-
+    const audio = new Audio("/media/audio/yq.m4a");
     audio.play();
   };
   // 停止
   const onStopClick = () => {
     setStart(false);
-  const audio = new Audio("/media/audio/yq.m4a");
-
+    const audio = new Audio("/media/audio/yq.m4a");
     audio.play();
   };
 
