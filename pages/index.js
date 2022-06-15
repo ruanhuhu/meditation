@@ -70,7 +70,7 @@ function addRecord({ duration }) {
       duration,
       timestamp: Date.now(),
     };
-    fetch("http://localhost:3000/api/add", {
+    fetch("/api/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
